@@ -11,18 +11,22 @@ import { Subscription } from 'rxjs/Rx';
       {{id}}
     `
 })
-export class UserComponent {
+export class UserComponent implements OnDestroy {
   id: string;
-  private: subscription: Subscription;
+  private subscription: Subscription;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { 
     //this.id = activatedRoute.snapshot.params['id'];
-    activatedRoute.params.subscribe(
+    this.subscription = activatedRoute.params.subscribe(
       (param: any) => this.id = param['id']
     );
   }
 
   onNavigate() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/'], {queryParams: {analytics: 100}});
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe(); 
   }
 }
