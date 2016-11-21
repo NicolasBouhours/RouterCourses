@@ -5,7 +5,7 @@
             <hr>
             <a [routerLink]="['/']" [queryParams]="{analytics: 500}" [fragment]="section1">Home</a> |
             <input type="text" #id (input)="0">
-            <a [routerLink]="['user', id.value]" [preserveQueryParams]="true" [preserveFragment]="true" routerLinkActive="true">User</a>
+            <a [routerLink]="['user', id.value]" [preserveQueryParams]="false" [preserveFragment]="false" routerLinkActive="true">User</a>
             <hr>
             <router-outlet></router-outlet>
         </div>
