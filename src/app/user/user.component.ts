@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
     `
 })
 export class UserComponent {
-
   constructor(private router: Router) { }
 
   onNavigate() {
