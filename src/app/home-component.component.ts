@@ -20,6 +20,10 @@ export class HomeComponent implements OnDestroy {
     this.subscription = route.queryParams.subscribe(
       (queryParam: any) => this.param = queryParam['analytics']
     );
+
+    this.subscription = route.fragment.subscribe(
+      fragment => console.log(fragment)
+    );
   }
 
   ngOnDestroy() {
