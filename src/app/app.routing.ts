@@ -9,7 +9,7 @@ const APP_ROUTES: Routes = [
     { path: 'user/', redirectTo: '/user/1', pathMatch: 'full' },
     { path: 'user/:id', component: UserComponent },
     { path: 'user/:id', component: UserComponent, children: USER_ROUTES },
-    {path: '**', redirectTo: '/user/1'}
+    { path: '**', redirectTo: '/user/1' }
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

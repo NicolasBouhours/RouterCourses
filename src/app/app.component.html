@@ -3,9 +3,12 @@
         <div class="col-xs-10">
             <h1>Hello World!</h1>
             <hr>
-            <a [routerLink]="['/']" [queryParams]="{analytics: 500}" [fragment]="section1">Home</a> |
+            <!--<div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a [routerLink]="['/']" [queryParams]="{analytics: 500}" [fragment]="section1">Home</a> |
+            </div> -->
+            <a [routerLink]="['/']" [queryParams]="{analytics: 500}" [fragment]="section1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> |
             <input type="text" #id (input)="0">
-            <a [routerLink]="['user', id.value]" [preserveQueryParams]="false" [preserveFragment]="false" routerLinkActive="true">User</a>
+            <a [routerLink]="['user', id.value]" [preserveQueryParams]="false" [preserveFragment]="false" routerLinkActive="active">User</a>
             <hr>
             <router-outlet></router-outlet>
         </div>
