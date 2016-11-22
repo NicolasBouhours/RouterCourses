@@ -5,7 +5,7 @@ export interface ComponentCanDeactivate {
     canDeactivate: () => boolean | Observable<boolean>;
 }
 
-export class UserEditGuard implements CanDeactivate {
+export class UserEditGuard implements CanDeactivate<ComponentCanDeactivate> {
 
     canDeactivate(component: ComponentCanDeactivate): Observable<boolean> | boolean {
         return component.canDeactivate ? component.canDeactivate() : true;
